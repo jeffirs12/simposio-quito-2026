@@ -1,0 +1,290 @@
+:root {
+  --primary: #003366;
+  --primary-hover: #002244;
+  --accent: #d97706;
+  --text: #1f2937;
+  --bg: #ffffff;
+  --bg-alt: #f3f4f6;
+  --error: #dc2626;
+  --success: #16a34a;
+  --font: system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+a:focus, button:focus, input:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* IMAGEN FLUIDA REAL */
+.fluid-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-toggle {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary);
+  padding: 1rem;
+}
+
+.nav.is-open {
+  display: block;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav li {
+  margin-bottom: 0.8rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  display: block;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.section {
+  padding: 2.5rem 1rem;
+}
+
+.bg-alt {
+  background-color: var(--bg-alt);
+}
+
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #e0f2fe;
+}
+
+.hero h1 {
+  font-size: 1.75rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.hero-location {
+  font-weight: bold;
+  margin-top: 0.8rem;
+  color: #0369a1;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  padding: 1.25rem;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.tag {
+  display: inline-block;
+  background: #dbeafe;
+  color: var(--primary);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+}
+
+.filter-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: var(--bg);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.form {
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.error-message {
+  color: var(--error);
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.success-message {
+  color: var(--success);
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  margin-top: 2rem;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    display: block;
+    position: static;
+    width: auto;
+    padding: 0;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav li {
+    margin-bottom: 0;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .fluid-img {
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section, .header {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
